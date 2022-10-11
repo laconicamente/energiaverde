@@ -1,0 +1,9 @@
+<!-- <app-header></app-header> -->
+<a class="link" (click)="startTimer()" *ngIf="videoOpen"></a>
+<ng-container *ngIf="videoOpen">
+    <video autoplay muted loop (click)="startVideo()" #videoPlayer >
+      <source src="assets/energiaverde.mp4" type="video/mp4" />
+    </video>
+</ng-container>
+
+<app-frame [ngClass]="videoOpen ? 'frame-close' : 'frame-open'"></app-frame>
